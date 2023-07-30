@@ -96,8 +96,8 @@ async def private_receive_handler(c: Client, m: Message):
             return
     try:
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
-        stream_link = f"{Var.URL}watch/{str(log_msg.id)}?hash={get_hash(log_msg)}"
-        online_link = f"{Var.URL}watch/{str(log_msg.id)}?hash={get_hash(log_msg)}"
+        stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        online_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
        
         msg_text ="""<b>📁  𝐅𝐢𝐥𝐞 𝐍𝐚𝐦𝐞 : </b> {}\n\n<b>💾  𝐅𝐢𝐥𝐞 𝐬𝐢𝐳𝐞 : </b> {}\n\n<b>🔗  𝐖𝐚𝐭𝐜𝐡 & 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 \n</b> {}\n"""
 
